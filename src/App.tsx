@@ -38,6 +38,7 @@ function App(): JSX.Element {
         <Stack.Screen
         name='WelcomeScreen'
         component={WelcomeScreen} 
+        options = {{headerShown :false }}
         />
         <Stack.Screen
         name='AuthenticationScreen'
