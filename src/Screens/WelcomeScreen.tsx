@@ -1,12 +1,18 @@
 import { Button, Image, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import { RootStackParamList } from '../App'
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import Style from '../Style/Style';
 
 
 type WelcomeProps = NativeStackScreenProps<RootStackParamList, 'WelcomeScreen'>;
 
 const WelcomeScreen = ({ navigation }: WelcomeProps) => {
+
+  //state variables , if we change it then screen will rerender, If will not happen is we change a variable
+  const[buttonText, setButtonText] = useState(" Get Started");
+
+
   return (
     <View style={styles.view}>
       <Image
@@ -23,12 +29,12 @@ const WelcomeScreen = ({ navigation }: WelcomeProps) => {
             uri: 'https://firebasestorage.googleapis.com/v0/b/a-square-gym.appspot.com/o/items%2Fnyl%2Fcarousel_1.png?alt=media&token=9232eae0-bf5e-4d14-a00d-f787991efe88'
           }}
         />
-        <Text style={styles.title}> The fastest auto booking\napp is here!</Text>
+        <Text style={Style.text}> The fastest auto booking\napp is here!</Text>
         <Text style={styles.description}> Our speedly booking process means\nyou get a ride quickly an easily.</Text>
         <View 
           style = {styles.button}>
         <Button
-          title='Get Started'
+          title={buttonText}
           onPress={() => navigation.push('AuthenticationScreen', {
             productId: 'rf'
           })}
@@ -43,8 +49,15 @@ const WelcomeScreen = ({ navigation }: WelcomeProps) => {
 
 export default WelcomeScreen
 
-const styles = StyleSheet.create({
+// const onButtonClick = (props) => {
+//   props.navigation.push('AuthenticationScreen', {
+//     productId: 'rf'
+//   })
 
+//   setButtonText("zxc");
+// }
+
+const styles = StyleSheet.create({
   view: {
     alignItems: 'center',
     flex: 1
@@ -61,7 +74,9 @@ const styles = StyleSheet.create({
     fontWeight : 'bold'
   },
   description: {
-    marginTop: 20
+    marginTop: 20,
+    textAlignVertical : 'center',
+    textAlign : 'center'
 
   },
   button: {
