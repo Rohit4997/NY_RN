@@ -31,3 +31,24 @@ Concepts :-
     - inLine style and external style
     - both can be used at same time 
         ex. style = {[style1, style2, {color : 'red'}]}
+
+* FlatList :- (Like recyclerview) it takes array in input and produces the output
+
+* textAlign :- Horizontal alignment of text
+
+* textAlignVertical :- Vertical alignment of text
+
+* flexDirection :- 'row' -> horizontal, 'column' -> vertical
+
+* flex 1 = weight 1
+
+* flexbox implementation :- {flex : 1, flexDirection : 'row', flexWrap : 'wrap'}
+
+* rendeItem :- onBindViewHolder
+
+* SectionList  :- nestedArray Items (property renderSelectionHeader)
+
+* Lifecycle :- 
+    - mounting -> onCreate
+    - updating -> 
+    - unMounting -> onDestroy
