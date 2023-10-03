@@ -52,3 +52,13 @@ Concepts :-
     - mounting -> onCreate
     - updating -> 
     - unMounting -> onDestroy
+
+* useEffect hook :- this is a feature which allows to use lifeCycle methods with functional components
+
+* preFix is 'use' :- it's kind of hook
+
+* useEffect :- this is called if any component is mounting, unmounting, updating
+
+* useEffect (() => {}, []) :- it will only be called when mounting
+
+*  useEffect (() => {}, [stateVariable]) :- it will only be called when stateVariable mount or updated
