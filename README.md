@@ -78,6 +78,11 @@ To learn more about React Native, take a look at the following resources:
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
 
+## create a file named localConfig.tsx
+export const localConfig = {
+    MERCHANT_ID: "",
+    BASE_URL : "",
+  };
 
 ##
 setps to run project

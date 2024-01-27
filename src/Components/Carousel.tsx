@@ -46,7 +46,7 @@ const SlideItem = ({item}) => {
 const Pagination = ({data, scrollX, index}) => {
   return (
     <View style={{flex : 1}}>
-        <View style = {{flex : 1, flexDirection : 'row', backgroundColor :'blue'}}>
+        <View style = {{flex : 1, flexDirection : 'row'}}>
         {data.map((_, idx) => {
         const inputRange = [(idx - 1) * width, idx * width, (idx + 1) * width];
 

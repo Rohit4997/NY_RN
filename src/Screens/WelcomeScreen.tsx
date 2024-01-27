@@ -24,7 +24,9 @@ const WelcomeScreen = ({ navigation }: WelcomeProps) => {
         <Carousel />
         </View>
         <View style={styles.button}>
-          <PrimaryButton buttonText = 'Get Started' onPress={() => navigation.push('AuthenticationScreen', {
+          <PrimaryButton buttonText = 'Get Started' 
+          config = {buttonStyle}
+          onPress={() => navigation.push('AuthenticationScreen', {
               productId: 'rf'
             })}/>
         </View>
@@ -34,7 +36,6 @@ const WelcomeScreen = ({ navigation }: WelcomeProps) => {
 }
 
 export default WelcomeScreen
-
 
 const styles = StyleSheet.create({
   view: {
@@ -76,5 +77,24 @@ const styles = StyleSheet.create({
   carousel : {
     flex : 7,
     justifyContent : 'center',
+  }
+})
+
+
+const buttonStyle = StyleSheet.create({
+  main:{
+    flex : 1
+  },
+  button : {
+    backgroundColor : "#2C2F3A",
+    fontSize : 24,
+    margin : 10,
+    padding : 10,
+    color : "#FCC32C",
+    textAlign : 'center',
+    borderRadius : 8,
+    shadowColor : 'black',
+    shadowOpacity : 1,
+    elevation : 10
   }
 })

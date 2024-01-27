@@ -2,10 +2,12 @@ import { StyleSheet, Text, TouchableHighlight, View } from 'react-native'
 import React from 'react'
 
 const PrimaryButton = (props) => {
+  const configValue = props.config ?? defConf;
   return (
-    <View style = {styles.main}>
-      <TouchableHighlight onPress={props.onPress} >
-        <Text style = {styles.button}> {props.buttonText} </Text>
+    <View style = {configValue.main}>
+      <TouchableHighlight onPress={props.onPress}
+       underlayColor="transparent">
+        <Text style = {configValue.button}> {props.buttonText} </Text>
       </TouchableHighlight>
     </View>
   )
@@ -13,7 +15,8 @@ const PrimaryButton = (props) => {
 
 export default PrimaryButton
 
-const styles = StyleSheet.create({
+
+const defConf = StyleSheet.create({
   main:{
     flex : 1
   },

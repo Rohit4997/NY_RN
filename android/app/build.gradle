@@ -89,14 +89,24 @@ android {
             keyPassword 'android'
         }
     }
+
+    Properties properties = new Properties()
+    if (rootProject.file("local.properties").exists()) {
+        properties.load(rootProject.file("local.properties").newDataInputStream())
+    }
+
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            buildConfigField "String", "MERCHANT_ID", properties.getProperty("MERCHANT_ID", "")
+            buildConfigField "String", "BASE_URL", properties.getProperty("BASE_URL", "")
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
+            buildConfigField "String", "MERCHANT_ID", properties.getProperty("MERCHANT_ID", "")
+            buildConfigField "String", "BASE_URL", properties.getProperty("BASE_URL", "")
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
