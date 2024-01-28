@@ -1,6 +1,7 @@
 import { getStringValue } from './../JBridge/SharedPreferencesModule';
+import { localConfig } from '../../localConfig';
 
-var BASE_URL = "";
+var BASE_URL = localConfig.BASE_URL;
 
 export const fetchAndStoreBaseUrl = async (): Promise<void> => {
     try {
@@ -12,17 +13,20 @@ export const fetchAndStoreBaseUrl = async (): Promise<void> => {
     }
   };
 
-fetchAndStoreBaseUrl();
+// fetchAndStoreBaseUrl();
   
 type Endpoints = {
   login: string;
   getUser: string;
+  authVerify : String;
   // Add more endpoints as needed
 };
 
 const endpoints: Endpoints = {
   login: '/auth',
   getUser: '/user/:userId', // Example with a dynamic parameter
+  authVerify : '/auth/:authId/verify'
+
   // Add more endpoints as needed
 };
 

@@ -19,11 +19,15 @@ import {createNativeStackNavigator} from "@react-navigation/native-stack"
 import HomeScreen from './Screens/HomeScreen';
 import WelcomeScreen from './Screens/WelcomeScreen';
 import AuthenticationScreen from './Screens/AuthenticationScreen';
+import OTPScreen from './Screens/OTPScreen';
+import SetupAccountScreen from './Screens/SetupAccountScreen';
 
 export type RootStackParamList = {
   WelcomeScreen: undefined;
   AuthenticationScreen: {productId: string};
-  HomeScreen : undefined
+  HomeScreen : undefined;
+  OTPScreen : {mobile : String};
+  SetupAccountScreen : undefined
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
@@ -45,6 +49,20 @@ function App(): JSX.Element {
         component={AuthenticationScreen}
         options={{
           title: "Enter mobile number"
+        }}
+        />
+        <Stack.Screen
+        name='OTPScreen'
+        component={OTPScreen}
+        options={{
+          title: "Enter OTP"
+        }}
+        />
+        <Stack.Screen
+        name='SetupAccountScreen'
+        component={SetupAccountScreen}
+        options={{
+          title: "Just one last thing"
         }}
         />
         <Stack.Screen

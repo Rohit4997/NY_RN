@@ -7,6 +7,7 @@ import PrimaryButton from '../Components/PrimaryButton';
 import { getEndpoint } from './../Services/Endpoints'
 import { getStringValue } from '../JBridge/SharedPreferencesModule';
 import { localConfig } from '../../localConfig';
+import headers from './../Services/API'
 
 type AuthenticationProps = NativeStackScreenProps<RootStackParamList, 'AuthenticationScreen'>;
 
@@ -23,13 +24,6 @@ const AuthenticationScreen = ({ navigation }: AuthenticationProps) => {
     const apiUrl = getEndpoint('login');
     console.log("apiUrl ", apiUrl)
 
-
-    const headers = {
-      'Content-Type': 'application/json',
-      'x-client-version': '1.2.9',
-      'x-bundle-version': '1.0.0',
-      'session_id': '70996248-adb0-2299-84bc-b94573d93aeb',
-    };
     
     const request = {
       method: 'POST',
@@ -53,6 +47,9 @@ const AuthenticationScreen = ({ navigation }: AuthenticationProps) => {
     .then(data => {
       // Handle the API response data
       console.log('API Response:', data);
+      navigation.push('OTPScreen', {
+        mobile: data.authId
+      })
     })
     .catch(error => {
       // Log the error message
