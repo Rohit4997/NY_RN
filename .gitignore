@@ -65,3 +65,4 @@ yarn-error.log
 # testing
 /coverage
 localConfig.ts
+package-lock.json

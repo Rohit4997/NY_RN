@@ -38,7 +38,10 @@ function App(): JSX.Element {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='WelcomeScreen'>
+      {/* <Stack.Navigator initialRouteName='WelcomeScreen'> */}
+      <Stack.Navigator initialRouteName='HomeScreen'>
+
+
         <Stack.Screen
         name='WelcomeScreen'
         component={WelcomeScreen} 
@@ -69,7 +72,8 @@ function App(): JSX.Element {
         name ='HomeScreen'
         component={HomeScreen}
         options={{
-          title: "HomeScreen"
+          title: "HomeScreen",
+          headerShown :false
         }}
         />
       </Stack.Navigator>

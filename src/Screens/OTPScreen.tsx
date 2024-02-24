@@ -8,6 +8,7 @@ import headers from '../Services/API';
 import { localConfig } from '../../localConfig';
 import { getEndpoint } from '../Services/Endpoints';
 import { useAuth } from '../Services/AuthContext';
+import { setLocalData } from './../Storage/Utils';
 
 type OTPScreenProps = NativeStackScreenProps<RootStackParamList, 'OTPScreen'>;
 
@@ -50,6 +51,7 @@ const OTPScreen = ({ route, navigation }: OTPScreenProps) => {
           .then(data => {
             // Handle the API response data
             console.log('API Response:', data);
+            setLocalData("REGISTRATION_TOKEN", data.token);
             // const { authToken, setToken } = useAuth();
             // setToken(data.token);
             navigation.push('SetupAccountScreen')

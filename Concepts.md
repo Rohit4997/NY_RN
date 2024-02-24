@@ -74,3 +74,7 @@ Concepts :-
 * every view can be a new function so the code looks cleaner
 
 * use flex and flexDirection for responsive UI, if we are using flex then then parent view should also have flex property
+
+* linearLayout HORIZONTAL - <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+
+* linearLayout VERTICAL - <View style={{ flexDirection: 'cloumn', justifyContent: 'space-between', alignItems: 'center' }}>
